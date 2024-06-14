@@ -128,7 +128,7 @@ class ExplanationViewController: UIViewController {
     }
     
     func fetchQuizQuestions(for certificateName: String, completion: @escaping (String?) -> Void) {
-            let apiKey = "" // APIKey 가림
+            let apiKey = Bundle.main.infoDictionary?["APIKey"] as! String // APIKey 가림
             let model = "gpt-4o"
 
             let endpoint = "https://api.openai.com/v1/chat/completions"
