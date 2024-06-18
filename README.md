@@ -34,7 +34,8 @@
 
 <details>
 <summary>초기화면</summary>
-  ![1](https://github.com/seungsang2000/IosFinalProject2/assets/74907427/c91c0ce6-0a00-4a28-98bc-2200e99649af)
+![1](https://github.com/seungsang2000/IosFinalProject2/assets/74907427/66d6e700-6a17-42f2-b1d2-557865e6f943)
+
 </details>
 
 
