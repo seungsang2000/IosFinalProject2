@@ -34,7 +34,7 @@
 
 <details>
 <summary>초기화면</summary>
-  ![Simulator Screenshot - iPhone 15 Pro - 2024-06-18 at 19 26 17](https://github.com/seungsang2000/IosFinalProject2/assets/74907427/2c50bb20-f117-4951-90a3-ead935ab5090)
+  ![Simulator Screenshot - iPhone 15 Pro - 2024-06-18 at 19 26 17](https://github.com/seungsang2000/IosFinalProject2/assets/74907427/00415ccd-f04c-4ded-a8bf-3014a038f2e7)
 
 </details>
 
