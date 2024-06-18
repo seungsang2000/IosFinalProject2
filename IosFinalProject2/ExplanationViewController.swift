@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class ExplanationViewController: UIViewController {
     var response: String? // JSON 형식의 응답을 저장하는 변수
@@ -19,8 +20,12 @@ class ExplanationViewController: UIViewController {
     @IBOutlet weak var choice2Label: UILabel!
     @IBOutlet weak var choice1Label: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
+    
+    var db: Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
         
         if let response = response {
                     parseResponse(response)
@@ -127,6 +132,27 @@ class ExplanationViewController: UIViewController {
         }
     }
     
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
+        guard let response = response,
+                      let data = response.data(using: .utf8),
+                      let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                      let question = json["문제"] as? String,
+                      let option1 = json["보기1"] as? String,
+                      let option2 = json["보기2"] as? String,
+                      let option3 = json["보기3"] as? String,
+                      let option4 = json["보기4"] as? String,
+                      let explanation = json["해설"] as? String,
+                      let answer = json["정답"] as? Int else {
+                    print("Error parsing JSON")
+                    return
+                }
+                
+        saveQuestionToFirestore(question: question, option1: option1, option2: option2, option3: option3, option4: option4, answer: answer, explanation: explanation, useranswer: userAnswer!)
+        showToastMessage("저장되었습니다")
+        
+        
+    }
     func fetchQuizQuestions(for certificateName: String, completion: @escaping (String?) -> Void) {
             let apiKey = Bundle.main.infoDictionary?["APIKey"] as! String // APIKey 가림
             let model = "gpt-4o"
@@ -191,8 +217,40 @@ class ExplanationViewController: UIViewController {
             task.resume()
         }
     
+    func saveQuestionToFirestore(question: String, option1: String, option2: String, option3: String, option4: String, answer: Int, explanation: String, useranswer: Int) {
+            let questionData: [String: Any] = [
+                "question": question,
+                "option1": option1,
+                "option2": option2,
+                "option3": option3,
+                "option4": option4,
+                "answer": answer,
+                "explanation": explanation,
+                "certificateName": certificateName ?? "unknown",
+                "userAnswer": useranswer
+            ]
+            
+            db.collection("questions").addDocument(data: questionData) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
+                } else {
+                    print("Document successfully added")
+                }
+            }
+        }
     
     
+    func showToastMessage(_ message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        self.present(alert, animated: true)
+        
+        // duration in seconds
+        let duration: Double = 2.0
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
+            alert.dismiss(animated: true)
+        }
+    }
     
     
     /*

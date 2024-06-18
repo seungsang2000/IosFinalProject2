@@ -34,6 +34,12 @@ class QuestionViewController: UIViewController {
                   let option4 = json["보기4"] as? String,
                   let answer = json["정답"] as? Int else {
                 print("Error parsing JSON")
+                guard let stopTest = self.storyboard?.instantiateViewController(identifier: "ViewController") else {return}
+                if let window = UIApplication.shared.windows.first{
+                    window.rootViewController = stopTest
+                    window.makeKeyAndVisible()
+                    UIView.transition(with: window, duration: 0.5, animations: nil)
+                }
                 return
             }
             

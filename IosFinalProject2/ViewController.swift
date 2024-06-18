@@ -118,6 +118,13 @@ class ViewController: UIViewController {
         }
         
     
+    @IBAction func questionListButton(_ sender: Any) {
+        guard let questionVC = self.storyboard?.instantiateViewController(identifier: "QuestionListViewController") as? QuestionListViewController else {
+            return
+        }
+        self.present(questionVC, animated: true)
+        
+    }
     
 }
 
