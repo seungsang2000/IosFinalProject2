@@ -5,6 +5,7 @@
 + [설명](#clipboard-프로젝트-설명)
 + [적용 기술](#screwdriver-적용-기술)
 + [시스템 구조도](#gear-시스템-구조도)
++ [실행화면](#camera-실행화면)
 
 </br>
 </br>
@@ -28,6 +29,19 @@
 </br>
 </br>
 
+
+## :camera: 실행화면
+
+<details>
+<summary>초기화면</summary>
+  ![Simulator Screenshot - iPhone 15 Pro - 2024-06-18 at 19 26 17](https://github.com/seungsang2000/IosFinalProject2/assets/74907427/2c50bb20-f117-4951-90a3-ead935ab5090)
+
+</details>
+
+
+
+</br>
+</br>
 
 ## :screwdriver: 적용 기술
 <ul>
