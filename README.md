@@ -5,7 +5,6 @@
 + [설명](#clipboard-프로젝트-설명)
 + [적용 기술](#screwdriver-적용-기술)
 + [시스템 구조도](#gear-시스템-구조도)
-+ [실행화면](#camera-실행화면)
 + [시연 영상](#camera-시연-영상)
 
 
@@ -31,23 +30,18 @@
 </br>
 </br>
 
-
-## :camera: 실행화면
-
-<details>
-<summary>초기화면</summary>
-![1](https://github.com/seungsang2000/IosFinalProject2/assets/74907427/66d6e700-6a17-42f2-b1d2-557865e6f943)
-
-</details>
+## :gear: 시스템 구조도
+![ios 구조도](https://github.com/seungsang2000/IosFinalProject2/assets/74907427/80b9870f-48e1-45c1-b826-41d2a04af8ea)
 
 
 </br>
 </br>
-
-
 
 ## :camera: 시연 영상
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/WbsNVWpJ3Oc" title="ios 시연영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+https://youtu.be/WbsNVWpJ3Oc?si=vHk_r4ocU6u2P7Sa
+
+</br>
+</br>
 
 ## :screwdriver: 적용 기술
 <ul>
