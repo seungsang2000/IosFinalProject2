@@ -31,7 +31,12 @@
 </br>
 
 ## :gear: 시스템 구조도
+<details>
+<summary>시스템 구조도</summary>
+  
 ![ios 구조도](https://github.com/seungsang2000/IosFinalProject2/assets/74907427/80b9870f-48e1-45c1-b826-41d2a04af8ea)
+
+</details>
 
 
 </br>
